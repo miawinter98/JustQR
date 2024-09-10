@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JustQR.AboutPage">
     <ScrollView>
-        <VerticalStackLayout Spacing="10" Margin="10">
+        <VerticalStackLayout Spacing="10" Margin="10" 
+                             HorizontalOptions="Center" MaximumWidthRequest="300">
             <HorizontalStackLayout Spacing="10">
                 <Image Source="dotnet_bot.png"
                        SemanticProperties.Description="The dot net bot waving hello!"
@@ -13,7 +14,14 @@
             </HorizontalStackLayout>
 
             <Label Text="This app is written in XAML and C# with .NET MAUI." />
-            <Button Text="Learn more..." Clicked="LearnMore_Clicked" />
+            <Label Text="Licensed under EUPL v1.2" />
+            <Button Text="Source Code" Clicked="LearnMore_Clicked" />
+            
+            <BoxView HeightRequest="1" Color="DarkGray" />
+
+            <Label Text="QR Codes are generated using QRCoder by codebude." />
+            <Label Text="codebudy/QRCoder is Licensed under the MIT License" />
+            <Button Text="Source Code" Clicked="LearnMore_QRCoder_Clicked" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
