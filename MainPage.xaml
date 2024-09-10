@@ -4,18 +4,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JustQR.MainPage">
     <ScrollView>
-        <VerticalStackLayout Padding="10" Spacing="25">
-            <Border HeightRequest="200" 
-                    Stroke="Black" StrokeThickness="1">
-                <Image x:Name="QrImage" Aspect="AspectFit" Source="dotnet_bot.png" />
+        <Grid Padding="10" RowSpacing="25" HorizontalOptions="Center" MaximumWidthRequest="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Stroke="Black" StrokeThickness="1">
+                <Image x:Name="QrImage" Aspect="AspectFit" Source="logo.png" />
             </Border>
 
-            <Editor x:Name="TextEditor" TextChanged="TextEditor_OnTextChanged"
+            <Editor Grid.Row="1" x:Name="TextEditor" TextChanged="TextEditor_OnTextChanged"
                     Placeholder="https://example.com"
                     HeightRequest="100" />
 
-            <Button Text="Save as..." Clicked="Button_OnClicked" />
-        </VerticalStackLayout>
+            <Button Grid.Row="2" Text="Save as..." Clicked="Button_OnClicked" />
+        </Grid>
     </ScrollView>
 
 </ContentPage>

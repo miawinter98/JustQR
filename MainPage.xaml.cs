@@ -25,9 +25,12 @@ public partial class MainPage {
 	}
 
 	private async void Button_OnClicked(object? sender, EventArgs e) {
+		var source = QrImage.Source as FileImageSource;
+		if (source is null) return;
+
 		var fileSaverResult = await FileSaver.Default.SaveAsync(
 			Environment.GetFolderPath(Environment.SpecialFolder.Personal), 
-			"qr_code.png", File.OpenRead(((FileImageSource) QrImage.Source).File));
+			"qr_code.png", File.OpenRead(source.File));
 		if (fileSaverResult.IsSuccessful) {
 			Toast.Make("Success");
 		} else {
