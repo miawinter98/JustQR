@@ -10,8 +10,10 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Border Stroke="Black" StrokeThickness="1">
-                <Image x:Name="QrImage" Aspect="AspectFit" Source="logo.png" />
+            <Border Stroke="Black" StrokeThickness="1" 
+                    MaximumHeightRequest="300" VerticalOptions="Start">
+                <Image x:Name="QrImage" Aspect="AspectFit" 
+                       Source="logo.png" HorizontalOptions="Fill" />
             </Border>
 
             <Editor Grid.Row="1" x:Name="TextEditor" TextChanged="TextEditor_OnTextChanged"
