@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using MauiIcons.Fluent;
 using Microsoft.Extensions.Logging;
 
 namespace JustQR;
@@ -9,6 +10,7 @@ public static class MauiProgram {
 		builder
 			.UseMauiApp<App>()
 			.UseMauiCommunityToolkit()
+			.UseFluentMauiIcons()
 			.ConfigureFonts(fonts => {
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
