@@ -6,7 +6,7 @@
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
   IgnorableNamespaces="uap rescap">
 
-  <Identity Name="maui-package-name-placeholder" Publisher="why is this here" Version="1.0.1.0" />
+  <Identity Name="maui-package-name-placeholder" Publisher="why is this here" Version="1.0.2.0" />
 
   <mp:PhoneIdentity PhoneProductId="830ECF25-EBFF-44A0-8D48-A2CDAB100B3B" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -22,7 +22,8 @@
   </Dependencies>
 
   <Resources>
-    <Resource Language="x-generate" />
+    <Resource Language="en" />
+    <Resource Language="de" />
   </Resources>
 
   <Applications>
@@ -33,8 +34,17 @@
         Square150x150Logo="$placeholder$.png"
         Square44x44Logo="$placeholder$.png"
         BackgroundColor="transparent">
-        <uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png" />
+        <uap:DefaultTile Square71x71Logo="$placeholder$.png" Wide310x150Logo="$placeholder$.png" Square310x310Logo="$placeholder$.png"  ShortName="JustQR">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+            <uap:ShowOn Tile="wide310x150Logo"/>
+            <uap:ShowOn Tile="square310x310Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile >
         <uap:SplashScreen Image="$placeholder$.png" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait"/>
+          <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>

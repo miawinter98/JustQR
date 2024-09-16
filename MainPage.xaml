@@ -3,7 +3,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:icons="http://www.aathifmahir.com/dotnet/2022/maui/icons"
-             x:Class="JustQR.MainPage">
+             x:Class="JustQR.MainPage"
+             xmlns:strings="clr-namespace:JustQR.Resources">
     <ScrollView>
         <VerticalStackLayout Padding="5" Spacing="10" HorizontalOptions="Center" MaximumWidthRequest="300">
             <Border Stroke="Black" StrokeThickness="1" 
@@ -20,15 +21,17 @@
                 
                 <Entry x:Name="LightColorText" Grid.Column="0" Text="white" />
                 <Entry x:Name="DarkColorText" Grid.Column="1" Text="000000" />
-                <Button Grid.Column="2" ToolTipProperties.Text="Refresh QR Code (applies colors)"
+                <Button Grid.Column="2" 
+                        ToolTipProperties.Text="{x:Static strings:AppResources.MainPage_RefreshButton_Tooltip}"
                         ImageSource="{icons:Fluent Icon=ArrowClockwise48}"
                         Clicked="ButtonRefresh_OnClicked" />
             </Grid>
             <Editor x:Name="TextEditor" TextChanged="TextEditor_OnTextChanged"
-                    Placeholder="https://example.com"
+                    Placeholder="{x:Static strings:AppResources.MainPage_LinkEditor_Placeholder}"
                     HeightRequest="100" />
 
-            <Button Text="Save as..." Clicked="Button_OnClicked" />
+            <Button Text="{x:Static strings:AppResources.MainPage_SaveButton}" 
+                    Clicked="Button_OnClicked" />
         </VerticalStackLayout>
     </ScrollView>
 

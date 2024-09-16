@@ -46,6 +46,11 @@
 		<AppInstallerUri>M:\JustQR_test</AppInstallerUri>
 		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<Title>JustQR</Title>
+		<RepositoryUrl>https://github.com/miawinter98/JustQR</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<NeutralLanguage>en</NeutralLanguage>
+		<DefaultLanguage>en</DefaultLanguage>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
@@ -113,6 +118,21 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="QRCoder" Version="1.6.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Resources\AppResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>AppResources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Resources\AppResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
